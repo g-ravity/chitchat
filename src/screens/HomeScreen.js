@@ -1,15 +1,16 @@
 import React, { Component } from "react";
-import { View, StyleSheet, StatusBar } from "react-native";
+import { View, StatusBar } from "react-native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 
 import Header from "../components/Header";
+import Stories from "../components/Stories";
 
 class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.navListener = this.props.navigation.addListener("didFocus", () =>
-      StatusBar.setBackgroundColor("#e62e8d")
+      StatusBar.setBackgroundColor("#4a4a4a")
     );
     this.state = {
       isAppReady: false
@@ -31,8 +32,12 @@ class HomeScreen extends Component {
         />
       );
     return (
-      <View forceInset={{ top: "always" }}>
+      <View
+        forceInset={{ top: "always" }}
+        style={{ backgroundColor: "#eaeaea", flex: 1 }}
+      >
         <Header />
+        <Stories />
       </View>
     );
   }
@@ -49,7 +54,5 @@ class HomeScreen extends Component {
     return Promise.all(cacheFonts);
   }
 }
-
-const style = StyleSheet.create({});
 
 export default HomeScreen;
