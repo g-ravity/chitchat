@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SaySup",
-    "slug": "say-sup",
+    "name": "GupShup",
+    "slug": "gupshup",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
@@ -25,12 +25,16 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gravity.saysup"
+      "bundleIdentifier": "com.gravity.gupshup"
     },
     "android": {
-      "package": "com.gravity.saysup"
+      "package": "com.gravity.gupshup"
+    },
+    "androidStatusBar": {
+      "translucent": false,
+      "backgroundColor": "#7e95f7"
     },
     "description": "Open Source Messaging App",
-    "githubUrl": "https://github.com/g-ravity/saysup"
+    "githubUrl": "https://github.com/g-ravity/gupshup"
   }
 }
