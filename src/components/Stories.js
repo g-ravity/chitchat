@@ -7,7 +7,9 @@ const renderStories = num => {
   const storiesList = [];
   while (num--) {
     storiesList.push({
-      imageUrl: `https://picsum.photos/200?random=${num}`,
+      image: `https://picsum.photos/200?random=${Math.floor(
+        Math.random() * 1000
+      )}`,
       name: faker.name.firstName()
     });
   }
@@ -18,14 +20,11 @@ const renderStories = num => {
       keyExtractor={(item, index) => item.name + index}
       renderItem={({ item }) => (
         <View style={style.storiesContainerStyle}>
-          <Image
-            source={{ uri: item.imageUrl }}
-            style={style.storiesImageStyle}
-          />
+          <Image source={{ uri: item.image }} style={style.storiesImageStyle} />
           <Text style={style.storiesTextStyle}>{item.name}</Text>
           {item.name.length > 9 && (
             <LinearGradient
-              colors={["transparent", "rgba(255,255,255,1)"]}
+              colors={["transparent", "rgb(255,255,255)"]}
               style={{ width: 70, height: 20, position: "absolute", bottom: 0 }}
               start={[0.6, 0]}
               end={[1, 0]}
@@ -59,8 +58,10 @@ const style = StyleSheet.create({
   headerTextStyle: {
     fontFamily: "Mark-Bold",
     fontSize: 18,
-    marginVertical: 10,
-    textAlign: "center"
+    marginTop: 10,
+    textAlign: "right",
+    marginRight: 20,
+    color: "#ff4ca9"
   },
   imageStyle: {
     width: 40,

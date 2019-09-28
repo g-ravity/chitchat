@@ -5,6 +5,7 @@ import * as Font from "expo-font";
 
 import Header from "../components/Header";
 import Stories from "../components/Stories";
+import ChatList from "../components/ChatList";
 
 class HomeScreen extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class HomeScreen extends Component {
       >
         <Header />
         <Stories />
+        <ChatList />
       </View>
     );
   }

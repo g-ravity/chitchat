@@ -6,7 +6,11 @@ const Header = () => {
   return (
     <View style={style.containerStyle}>
       <Image
-        source={{ uri: "https://picsum.photos/200?random=100" }}
+        source={{
+          uri: `https://picsum.photos/200?random=${Math.floor(
+            Math.random() * 1000
+          )}`
+        }}
         style={style.imageStyle}
       />
       <Text style={style.textStyle}>Gupshup</Text>
@@ -17,7 +21,7 @@ const Header = () => {
 
 const style = StyleSheet.create({
   containerStyle: {
-    height: 80,
+    height: 60,
     backgroundColor: "#ff4ca9",
     flexDirection: "row",
     justifyContent: "space-between",
