@@ -65,13 +65,13 @@ const ChatList = ({ navigation }) => {
                 />
               </View>
               <View style={{ flex: 1 }}>
-                <Text style={style.headerStyle}>{item.name}</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between"
-                  }}
-                >
+                <View style={style.flexRowStyle}>
+                  <Text style={style.headerStyle} numberOfLines={1}>
+                    {item.name}
+                  </Text>
+                  <Text style={style.timeStyle}>{item.time}</Text>
+                </View>
+                <View style={style.flexRowStyle}>
                   <Text style={style.subHeaderStyle} numberOfLines={1}>
                     {item.text}
                   </Text>
@@ -88,7 +88,6 @@ const ChatList = ({ navigation }) => {
                   />
                 </View>
               </View>
-              <Text style={style.timeStyle}>{item.time}</Text>
             </View>
           </TouchableNativeFeedback>
         )}
@@ -130,7 +129,9 @@ const style = StyleSheet.create({
   headerStyle: {
     fontFamily: "Mark-Regular",
     fontSize: 18,
-    marginBottom: 5
+    marginBottom: 5,
+    marginRight: 10,
+    flex: 1
   },
   subHeaderStyle: {
     fontFamily: "Mark-Regular",
@@ -141,11 +142,13 @@ const style = StyleSheet.create({
   },
   timeStyle: {
     fontFamily: "Mark-Light",
-    position: "absolute",
-    top: 0,
-    right: 0,
     fontSize: 12,
     color: "#999999"
+  },
+  flexRowStyle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
   }
 });
 
