@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
 
-const Header = () => {
+const HomeHeader = () => {
   return (
     <View style={style.containerStyle}>
       <Image
@@ -48,4 +48,4 @@ const style = StyleSheet.create({
   }
 });
 
-export default Header;
+export default HomeHeader;

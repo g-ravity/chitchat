@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { View, StatusBar } from "react-native";
+import { View, StatusBar, StyleSheet } from "react-native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 
-import Header from "../components/Header";
+import Header from "../components/HomeHeader";
 import Stories from "../components/Stories";
 import ChatList from "../components/ChatList";
 
@@ -33,10 +33,7 @@ class HomeScreen extends Component {
         />
       );
     return (
-      <View
-        forceInset={{ top: "always" }}
-        style={{ backgroundColor: "#eaeaea", flex: 1 }}
-      >
+      <View forceInset={{ top: "always" }} style={style.containerStyle}>
         <Header />
         <Stories />
         <ChatList />
@@ -56,5 +53,12 @@ class HomeScreen extends Component {
     return Promise.all(cacheFonts);
   }
 }
+
+const style = StyleSheet.create({
+  containerStyle: {
+    backgroundColor: "#eaeaea",
+    flex: 1
+  }
+});
 
 export default HomeScreen;

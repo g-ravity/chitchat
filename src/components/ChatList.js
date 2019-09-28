@@ -1,82 +1,101 @@
 import React from "react";
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  FlatList,
+  TouchableNativeFeedback
+} from "react-native";
 import { Avatar, Badge } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import faker from "faker";
+import { withNavigation } from "react-navigation";
+
 import { formatTime } from "../utils";
 
-const renderChats = num => {
-  const chatList = [];
-  while (num--) {
-    chatList.push({
-      name: faker.name.findName(),
-      image: `https://picsum.photos/200?random=${Math.floor(
-        Math.random() * 1000
-      )}`,
-      text: faker.lorem.sentence(),
-      time: formatTime(faker.date.recent()),
-      isActive: Math.floor(Math.random() * 2),
-      readReceipt: Math.floor(Math.random() * 4)
-    });
-  }
+const ChatList = ({ navigation }) => {
+  const renderChats = num => {
+    const chatList = [];
+    while (num--) {
+      chatList.push({
+        name: faker.name.findName(),
+        image: `https://picsum.photos/200?random=${Math.floor(
+          Math.random() * 1000
+        )}`,
+        text: faker.lorem.sentence(),
+        time: formatTime(faker.date.recent()),
+        isActive: Math.floor(Math.random() * 2),
+        readReceipt: Math.floor(Math.random() * 4)
+      });
+    }
 
-  return (
-    <FlatList
-      data={chatList}
-      keyExtractor={(item, index) => item.name + index}
-      renderItem={({ item }) => (
-        <View style={style.chatContainerStyle}>
-          <View style={{ marginRight: 10 }}>
-            <Avatar
-              rounded
-              source={{
-                uri: item.image
-              }}
-              size={50}
-            />
-            <Badge
-              badgeStyle={{
-                backgroundColor: item.isActive ? "#7e95f7" : "#eaeaea"
-              }}
-              containerStyle={{
-                position: "absolute",
-                top: -4,
-                right: -4
-              }}
-            />
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={style.headerStyle}>{item.name}</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between"
-              }}
-            >
-              <Text style={style.subHeaderStyle} numberOfLines={1}>
-                {item.text}
-              </Text>
-              <MaterialCommunityIcons
-                name={
-                  item.readReceipt
-                    ? item.readReceipt > 1
-                      ? "check-all"
-                      : "check"
-                    : "timer-sand"
-                }
-                size={15}
-                color={item.readReceipt === 3 ? "#7e95f7" : "#999999"}
-              />
+    return (
+      <FlatList
+        data={chatList}
+        keyExtractor={(item, index) => item.name + index}
+        renderItem={({ item }) => (
+          <TouchableNativeFeedback
+            onPress={() =>
+              navigation.navigate("Chat", {
+                image: item.image,
+                name: item.name,
+                isActive: item.isActive,
+                lastSeen: item.time
+              })
+            }
+          >
+            <View style={style.chatContainerStyle}>
+              <View style={{ marginRight: 10 }}>
+                <Avatar
+                  rounded
+                  source={{
+                    uri: item.image
+                  }}
+                  size={50}
+                />
+                <Badge
+                  badgeStyle={{
+                    backgroundColor: item.isActive ? "#7e95f7" : "#eaeaea"
+                  }}
+                  containerStyle={{
+                    position: "absolute",
+                    top: -4,
+                    right: -4
+                  }}
+                />
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={style.headerStyle}>{item.name}</Text>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between"
+                  }}
+                >
+                  <Text style={style.subHeaderStyle} numberOfLines={1}>
+                    {item.text}
+                  </Text>
+                  <MaterialCommunityIcons
+                    name={
+                      item.readReceipt
+                        ? item.readReceipt > 1
+                          ? "check-all"
+                          : "check"
+                        : "timer-sand"
+                    }
+                    size={15}
+                    color={item.readReceipt === 3 ? "#7e95f7" : "#999999"}
+                  />
+                </View>
+              </View>
+              <Text style={style.timeStyle}>{item.time}</Text>
             </View>
-          </View>
-          <Text style={style.timeStyle}>{item.time}</Text>
-        </View>
-      )}
-    />
-  );
-};
+          </TouchableNativeFeedback>
+        )}
+      />
+    );
+  };
 
-const ChatList = () => {
   return (
     <View style={style.containerStyle}>
       <Text style={style.headerTextStyle}>Chats</Text>
@@ -130,4 +149,4 @@ const style = StyleSheet.create({
   }
 });
 
-export default ChatList;
+export default withNavigation(ChatList);

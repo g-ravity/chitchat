@@ -1,16 +1,26 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Button } from "react-native-paper";
+
+import ChatHeader from "../components/ChatHeader";
 
 const ChatScreen = ({ navigation }) => {
   return (
-    <View>
-      <Text>ChatScreen</Text>
-      <Button onPress={() => navigation.navigate("Home")}>Home</Button>
+    <View style={style.containerStyle}>
+      <ChatHeader
+        name={navigation.getParam("name")}
+        image={navigation.getParam("image")}
+        isActive={navigation.getParam("isActive")}
+        lastSeen={navigation.getParam("lastSeen")}
+      />
     </View>
   );
 };
 
-const style = StyleSheet.create({});
+const style = StyleSheet.create({
+  containerStyle: {
+    backgroundColor: "#eaeaea",
+    flex: 1
+  }
+});
 
 export default ChatScreen;
