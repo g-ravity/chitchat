@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 
 import ChatHeader from "../components/ChatHeader";
 import Messages from "../components/Messages";
+import Input from "../components/Input";
 
 const ChatScreen = ({ navigation }) => {
   return (
@@ -14,6 +15,7 @@ const ChatScreen = ({ navigation }) => {
         lastSeen={navigation.getParam("lastSeen")}
       />
       <Messages />
+      <Input />
     </View>
   );
 };
