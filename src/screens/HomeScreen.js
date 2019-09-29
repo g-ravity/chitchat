@@ -3,9 +3,9 @@ import { View, StatusBar, StyleSheet } from "react-native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 
-import Header from "../components/HomeHeader";
-import Stories from "../components/Stories";
-import ChatList from "../components/ChatList";
+import Header from "../components/Home/HomeHeader";
+import Stories from "../components/Home/Stories";
+import ChatList from "../components/Home/ChatList";
 
 class HomeScreen extends Component {
   constructor(props) {

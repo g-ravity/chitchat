@@ -9,7 +9,7 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { withNavigation } from "react-navigation";
 
-import Header from "./Header";
+import Header from "../Header";
 
 const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
   return (

@@ -4,7 +4,7 @@ import { withNavigation } from "react-navigation";
 import { Feather } from "@expo/vector-icons";
 import faker from "faker";
 
-import Header from "./Header";
+import Header from "../Header";
 
 const HomeHeader = ({ navigation }) => {
   const profileImage = faker.image.avatar();

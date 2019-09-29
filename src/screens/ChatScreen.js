@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-import Header from "../components/ChatHeader";
-import Messages from "../components/Messages";
-import Input from "../components/Input";
+import Header from "../components/Chat/ChatHeader";
+import Messages from "../components/Chat/Messages";
+import Input from "../components/Chat/Input";
 
 const ChatScreen = ({ navigation }) => {
   return (

@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableNativeFeedback } from "react-native";
 import { withNavigation } from "react-navigation";
 import { Feather } from "@expo/vector-icons";
 
-import Header from "./Header";
+import Header from "../Header";
 
 const SettingsHeader = ({ navigation }) => {
   return (

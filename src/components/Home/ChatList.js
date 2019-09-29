@@ -11,7 +11,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import faker from "faker";
 import { withNavigation } from "react-navigation";
 
-import { formatTime } from "../utils";
+import { formatTime } from "../../utils";
 
 const ChatList = ({ navigation }) => {
   const renderChats = num => {

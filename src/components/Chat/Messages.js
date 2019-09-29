@@ -9,7 +9,7 @@ import {
 import faker from "faker";
 import { MaterialCommunityIcons, Feather } from "@expo/vector-icons";
 
-import { formatTime } from "../utils";
+import { formatTime } from "../../utils";
 
 const textsList = [];
 let numberOfTexts = 20;

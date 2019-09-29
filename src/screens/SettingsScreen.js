@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import faker from "faker";
 
-import Header from "../components/SettingsHeader";
+import Header from "../components/Settings/SettingsHeader";
 import ProfileImage from "../components/ProfileImage";
 
 const name = faker.name.findName();
