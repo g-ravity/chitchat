@@ -1,36 +1,33 @@
 import React from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, StyleSheet, Image, TouchableNativeFeedback } from "react-native";
+import { withNavigation } from "react-navigation";
 import { Feather } from "@expo/vector-icons";
 import faker from "faker";
 
-const HomeHeader = () => {
+import Header from "./Header";
+
+const HomeHeader = ({ navigation }) => {
+  const profileImage = faker.image.avatar();
+
   return (
-    <View style={style.containerStyle}>
-      <Image
-        source={{
-          uri: faker.image.avatar()
-        }}
-        style={style.imageStyle}
-      />
+    <Header>
+      <TouchableNativeFeedback
+        onPress={() => navigation.navigate("Settings", { image: profileImage })}
+      >
+        <Image
+          source={{
+            uri: profileImage
+          }}
+          style={style.imageStyle}
+        />
+      </TouchableNativeFeedback>
       <Text style={style.textStyle}>Gupshup</Text>
       <Feather name="search" size={20} style={style.iconStyle} />
-    </View>
+    </Header>
   );
 };
 
 const style = StyleSheet.create({
-  containerStyle: {
-    height: 60,
-    backgroundColor: "#ff4ca9",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    marginTop: 10,
-    marginLeft: 10
-  },
   imageStyle: {
     width: 40,
     height: 40,
@@ -47,4 +44,4 @@ const style = StyleSheet.create({
   }
 });
 
-export default HomeHeader;
+export default withNavigation(HomeHeader);

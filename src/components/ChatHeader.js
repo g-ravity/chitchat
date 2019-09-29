@@ -9,9 +9,11 @@ import {
 import { Feather } from "@expo/vector-icons";
 import { withNavigation } from "react-navigation";
 
+import Header from "./Header";
+
 const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
   return (
-    <View style={style.containerStyle}>
+    <Header>
       <TouchableNativeFeedback onPress={() => navigation.navigate("Home")}>
         <Feather name="arrow-left" size={20} style={style.iconStyle} />
       </TouchableNativeFeedback>
@@ -43,23 +45,11 @@ const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
         size={20}
         style={{ ...style.iconStyle, marginRight: 0 }}
       />
-    </View>
+    </Header>
   );
 };
 
 const style = StyleSheet.create({
-  containerStyle: {
-    height: 60,
-    backgroundColor: "#ff4ca9",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 10,
-    borderTopLeftRadius: 30,
-    borderBottomLeftRadius: 30,
-    marginVertical: 10,
-    marginLeft: 10
-  },
   imageStyle: {
     width: 40,
     height: 40,

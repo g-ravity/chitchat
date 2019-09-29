@@ -50,7 +50,6 @@ const style = StyleSheet.create({
     backgroundColor: "#ffffff",
     borderTopLeftRadius: 30,
     borderBottomLeftRadius: 30,
-    marginTop: 10,
     marginLeft: 10
   },
   headerTextStyle: {
