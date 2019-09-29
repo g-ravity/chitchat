@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import ChatHeader from "../components/ChatHeader";
+import Messages from "../components/Messages";
 
 const ChatScreen = ({ navigation }) => {
   return (
@@ -12,6 +13,7 @@ const ChatScreen = ({ navigation }) => {
         isActive={navigation.getParam("isActive")}
         lastSeen={navigation.getParam("lastSeen")}
       />
+      <Messages />
     </View>
   );
 };

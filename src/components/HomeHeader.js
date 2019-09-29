@@ -1,15 +1,14 @@
 import React from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import faker from "faker";
 
 const HomeHeader = () => {
   return (
     <View style={style.containerStyle}>
       <Image
         source={{
-          uri: `https://picsum.photos/200?random=${Math.floor(
-            Math.random() * 1000
-          )}`
+          uri: faker.image.avatar()
         }}
         style={style.imageStyle}
       />

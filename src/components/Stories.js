@@ -7,9 +7,7 @@ const renderStories = num => {
   const storiesList = [];
   while (num--) {
     storiesList.push({
-      image: `https://picsum.photos/200?random=${Math.floor(
-        Math.random() * 1000
-      )}`,
+      image: faker.image.avatar(),
       name: faker.name.firstName()
     });
   }
@@ -42,7 +40,7 @@ const Stories = () => {
   return (
     <View style={style.containerStyle}>
       <Text style={style.headerTextStyle}>Stories</Text>
-      <View>{renderStories(5)}</View>
+      <View>{renderStories(10)}</View>
     </View>
   );
 };
@@ -61,7 +59,7 @@ const style = StyleSheet.create({
     marginTop: 10,
     textAlign: "right",
     marginRight: 20,
-    color: "#ff4ca9"
+    color: "#7e95f7"
   },
   imageStyle: {
     width: 40,

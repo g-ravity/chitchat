@@ -19,9 +19,7 @@ const ChatList = ({ navigation }) => {
     while (num--) {
       chatList.push({
         name: faker.name.findName(),
-        image: `https://picsum.photos/200?random=${Math.floor(
-          Math.random() * 1000
-        )}`,
+        image: faker.image.avatar(),
         text: faker.lorem.sentence(),
         time: formatTime(faker.date.recent()),
         isActive: Math.floor(Math.random() * 2),
@@ -117,7 +115,7 @@ const style = StyleSheet.create({
     marginVertical: 10,
     textAlign: "left",
     marginLeft: 20,
-    color: "#ff4ca9"
+    color: "#7e95f7"
   },
   chatContainerStyle: {
     flexDirection: "row",
