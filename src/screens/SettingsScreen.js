@@ -1,12 +1,23 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import faker from "faker";
 
 import Header from "../components/SettingsHeader";
+import ProfileImage from "../components/ProfileImage";
+
+const name = faker.name.findName();
+const about = faker.lorem.sentence();
 
 const SettingsScreen = ({ navigation }) => {
   return (
     <View style={style.containerStyle}>
       <Header />
+      <ProfileImage
+        name={name}
+        detail={about}
+        image={navigation.getParam("image")}
+        icons={["camera"]}
+      />
     </View>
   );
 };
