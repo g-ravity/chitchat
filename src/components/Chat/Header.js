@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Feather } from "@expo/vector-icons";
 import { withNavigation } from "react-navigation";
 
 import Header from "../Header";
@@ -32,8 +32,8 @@ const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
           </Text>
         </View>
       </View>
-      <Feather name="phone" size={20} style={style.iconStyle} />
-      <Feather name="video" size={20} style={style.iconStyle} />
+      <MaterialCommunityIcons name="phone" size={20} style={style.iconStyle} />
+      <MaterialCommunityIcons name="video" size={20} style={style.iconStyle} />
       <Feather
         name="more-vertical"
         size={20}
