@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, Image, TouchableNativeFeedback } from "react-native";
+import { Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { withNavigation } from "react-navigation";
 import { Feather } from "@expo/vector-icons";
 import faker from "faker";
@@ -11,8 +11,9 @@ const HomeHeader = ({ navigation }) => {
 
   return (
     <Header>
-      <TouchableNativeFeedback
+      <TouchableOpacity
         onPress={() => navigation.navigate("Settings", { image: profileImage })}
+        activeOpacity={0.6}
       >
         <Image
           source={{
@@ -20,7 +21,7 @@ const HomeHeader = ({ navigation }) => {
           }}
           style={style.imageStyle}
         />
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
       <Text style={style.textStyle}>Gupshup</Text>
       <Feather name="search" size={20} style={style.iconStyle} />
     </Header>

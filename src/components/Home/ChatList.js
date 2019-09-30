@@ -4,7 +4,7 @@ import {
   View,
   StyleSheet,
   FlatList,
-  TouchableNativeFeedback
+  TouchableOpacity
 } from "react-native";
 import { Avatar, Badge } from "react-native-elements";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -32,7 +32,7 @@ const ChatList = ({ navigation }) => {
         data={chatList}
         keyExtractor={(item, index) => item.name + index}
         renderItem={({ item }) => (
-          <TouchableNativeFeedback
+          <TouchableOpacity
             onPress={() =>
               navigation.navigate("Chat", {
                 image: item.image,
@@ -41,6 +41,7 @@ const ChatList = ({ navigation }) => {
                 lastSeen: item.time
               })
             }
+            activeOpacity={0.4}
           >
             <View style={style.chatContainerStyle}>
               <View style={{ marginRight: 10 }}>
@@ -87,7 +88,7 @@ const ChatList = ({ navigation }) => {
                 </View>
               </View>
             </View>
-          </TouchableNativeFeedback>
+          </TouchableOpacity>
         )}
       />
     );

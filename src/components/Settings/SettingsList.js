@@ -3,7 +3,7 @@ import {
   View,
   Text,
   StyleSheet,
-  TouchableNativeFeedback,
+  TouchableOpacity,
   Animated,
   Easing
 } from "react-native";
@@ -54,7 +54,7 @@ class SettingsList extends Component {
 
     return (
       <View style={style.containerStyle}>
-        <TouchableNativeFeedback
+        <TouchableOpacity
           onPress={() =>
             this.setState({ showLastSeen: !this.state.showLastSeen })
           }
@@ -68,7 +68,7 @@ class SettingsList extends Component {
               style={style.dropdownStyle}
             />
           </View>
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
         <Animated.View
           style={{ height, opacity, position: "relative", top: 20 }}
         >

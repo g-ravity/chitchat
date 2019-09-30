@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableNativeFeedback } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { withNavigation } from "react-navigation";
 import { Feather } from "@expo/vector-icons";
 
@@ -9,9 +9,9 @@ const SettingsHeader = ({ navigation }) => {
   return (
     <Header>
       <View style={style.flexRowStyle}>
-        <TouchableNativeFeedback onPress={() => navigation.navigate("Home")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
           <Feather name="arrow-left" size={20} style={style.iconStyle} />
-        </TouchableNativeFeedback>
+        </TouchableOpacity>
         <Text style={style.headerTextStyle}>Profile</Text>
       </View>
       <Feather name="edit-2" size={20} style={style.iconStyle} />

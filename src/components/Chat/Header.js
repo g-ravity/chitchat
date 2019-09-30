@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  TouchableNativeFeedback
-} from "react-native";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { withNavigation } from "react-navigation";
 
@@ -14,9 +8,9 @@ import Header from "../Header";
 const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
   return (
     <Header>
-      <TouchableNativeFeedback onPress={() => navigation.navigate("Home")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Home")}>
         <Feather name="arrow-left" size={20} style={style.iconStyle} />
-      </TouchableNativeFeedback>
+      </TouchableOpacity>
       <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
         <Image
           source={{
