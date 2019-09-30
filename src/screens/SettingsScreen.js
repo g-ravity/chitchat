@@ -1,8 +1,9 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import faker from "faker";
 
-import Header from "../components/Settings/SettingsHeader";
+import Header from "../components/Settings/Header";
+import SettingsList from "../components/Settings/SettingsList";
 import ProfileImage from "../components/ProfileImage";
 
 const name = faker.name.findName();
@@ -10,7 +11,10 @@ const about = faker.lorem.sentence();
 
 const SettingsScreen = ({ navigation }) => {
   return (
-    <View style={style.containerStyle}>
+    <ScrollView
+      style={style.containerStyle}
+      showsVerticalScrollIndicator={false}
+    >
       <Header />
       <ProfileImage
         name={name}
@@ -18,7 +22,8 @@ const SettingsScreen = ({ navigation }) => {
         image={navigation.getParam("image")}
         icons={["camera"]}
       />
-    </View>
+      <SettingsList />
+    </ScrollView>
   );
 };
 

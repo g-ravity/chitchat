@@ -3,7 +3,7 @@ import { View, StatusBar, StyleSheet } from "react-native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
 
-import Header from "../components/Home/HomeHeader";
+import Header from "../components/Home/Header";
 import Stories from "../components/Home/Stories";
 import ChatList from "../components/Home/ChatList";
 

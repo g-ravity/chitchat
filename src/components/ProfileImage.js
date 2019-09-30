@@ -60,7 +60,7 @@ const style = StyleSheet.create({
   },
   detailStyle: {
     fontFamily: "Mark-Light",
-    fontSize: 14,
+    fontSize: 16,
     color: "#ffffff"
   },
   iconGroupContainer: {

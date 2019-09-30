@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 
-import Header from "../components/Chat/ChatHeader";
+import Header from "../components/Chat/Header";
 import Messages from "../components/Chat/Messages";
 import Input from "../components/Chat/Input";
 
