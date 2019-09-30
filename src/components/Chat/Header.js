@@ -24,12 +24,14 @@ const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
             marginHorizontal: 10
           }}
         >
-          <Text style={style.headerTextStyle} numberOfLines={1}>
-            {name}
-          </Text>
-          <Text style={style.subHeaderTextStyle}>
-            {isActive ? "Online" : `Last Seen At ${lastSeen}`}
-          </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+            <Text style={style.headerTextStyle} numberOfLines={1}>
+              {name}
+            </Text>
+            <Text style={style.subHeaderTextStyle}>
+              {isActive ? "Online" : `Last Seen At ${lastSeen}`}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <MaterialCommunityIcons name="phone" size={20} style={style.iconStyle} />

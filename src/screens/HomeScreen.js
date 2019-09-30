@@ -33,7 +33,7 @@ class HomeScreen extends Component {
         />
       );
     return (
-      <View forceInset={{ top: "always" }} style={style.containerStyle}>
+      <View style={style.containerStyle}>
         <Header />
         <Stories />
         <ChatList />
