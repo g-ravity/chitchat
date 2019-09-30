@@ -25,7 +25,8 @@ const Input = () => {
 const style = StyleSheet.create({
   containerStyle: {
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    marginTop: 5,
+    marginBottom: 10,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
@@ -41,7 +42,10 @@ const style = StyleSheet.create({
     maxHeight: 150
   },
   iconStyle: {
-    color: "#7e95f7"
+    color: "#ffffff",
+    backgroundColor: "#7e95f7",
+    padding: 10,
+    borderRadius: 100
   }
 });
 
