@@ -24,7 +24,16 @@ const ChatHeader = ({ name, image, lastSeen, isActive, navigation }) => {
             marginHorizontal: 10
           }}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Profile", {
+                name,
+                image,
+                lastSeen,
+                isActive
+              })
+            }
+          >
             <Text style={style.headerTextStyle} numberOfLines={1}>
               {name}
             </Text>
